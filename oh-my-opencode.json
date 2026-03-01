@@ -1,94 +1,127 @@
 {
-  "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-opencode/master/assets/oh-my-opencode.schema.json",
-  "google_auth": true,
-  "agents": {
-    "sisyphus": {
-      "model": "newapi-claude/claude-opus-4-6"
-    },
-    "OpenCode-Builder": {
-      "model": "newapi-claude/claude-opus-4-6"
-    },
-    "prometheus": {
-      "model": "newapi-claude/claude-opus-4-6"
-    },
-	"hephaestus": {
-      "model": "newapi-oai/gpt-5.3-codex",
-	  "variant": "xhigh"
-    },
-    "metis": {
-      "model": "newapi-claude/claude-sonnet-4-5"
-    },
-    "momus": {
-      "model": "newapi-oai/gpt-5.3-codex",
-	  "variant": "xhigh"
-    },
-    "atlas": {
-      "model": "newapi-claude/claude-sonnet-4-5"
-    },
-    "oracle": {
-      "model": "newapi-oai/gpt-5.3-codex",
-	  "reasoningEffort":"xhigh",
-      "description": "Architecture, code review, strategy"
-    },
-    "librarian": {
-      "model": "newapi-gemini/gemini-3-flash-preview",
-      "description": "Multi-repo analysis, doc lookup, implementation examples"
-    },
-    "explore": {
-      "model": "newapi-claude/claude-haiku-4-5",
-      "description": "Fast codebase exploration and pattern matching"
-    },
-    "frontend-ui-ux-engineer": {
-      "model": "newapi-gemini/gemini-3-pro-preview",
-      "description": "A designer turned developer. Builds gorgeous UIs"
-    },
-    "document-writer": {
-      "model": "newapi-gemini/gemini-3-flash-preview",
-      "description": "Technical writing expert"
-    },
-    "multimodal-looker": {
-      "model": "newapi-gemini/gemini-3-flash-preview",
-      "description": "Visual content specialist"
-    }
-  },
-  "categories": {
-    "visual-engineering": { 
-      "model": "newapi-gemini/gemini-3-pro-preview"
-    },
-    "ultrabrain": { 
-      "model": "newapi-oai/gpt-5.3-codex",
-      "variant": "xhigh"
-    },
-    "artistry": { 
-      "model": "newapi-gemini/gemini-3-pro-preview",
-      "variant": "max"
-    },
-    "quick": { 
-      "model": "newapi-claude/claude-haiku-4-5"
-    },
-    "unspecified-low": { 
-      "model": "newapi-claude/claude-sonnet-4-5"
-    },
-    "unspecified-high": { 
-      "model": "newapi-claude/claude-opus-4-6",
-      "variant": "max"
-    },
-    "writing": { 
-      "model": "newapi-gemini/gemini-3-flash-preview"
-    }
-  },
-  "sisyphus_agent": {
-    "disabled": false,
-    "default_builder_enabled": false,
-    "planner_enabled": true,
-    "replace_plan": true
-  },
-  "background_task": {
-    "defaultConcurrency": 5,
-    "providerConcurrency": {
-      "anthropic": 3,
-      "openai": 5,
-      "google": 10
-    }
-  },
+	"$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-opencode/master/assets/oh-my-opencode.schema.json",
+	"runtime_fallback": {
+		"enabled": true,
+		"retry_on_errors": [
+			400,
+			429,
+			500,
+			503,
+			529
+		],
+		"max_fallback_attempts": 3,
+		"cooldown_seconds": 60,
+		"timeout_seconds": 60,
+		"notify_on_fallback": true
+	},
+	"agents": {
+		"sisyphus": {
+			"model": "newapi-claude/claude-opus-4-6",
+			"temperature": 0.1,
+			"fallback_models": [
+				"newapi-claude/claude-sonnet-4-6",
+				"newapi-oai/gpt-5.3-codex",
+			]
+		},
+		"atlas": {
+			"model": "newapi-claude/claude-sonnet-4-6",
+			"temperature": 0.1,
+			"fallback_models": [
+				"newapi-claude/claude-opus-4-6",
+				"newapi-gemini/gemini-3-pro-preview"
+			]
+		},
+		"prometheus": {
+			"model": "newapi-claude/claude-opus-4-6",
+			"temperature": 0.1,
+			"fallback_models": [
+				"newapi-oai/gpt-5.2"
+			]
+		},
+		"metis": {
+			"model": "newapi-claude/claude-opus-4-6",
+			"temperature": 0.3,
+			"variant": "max",
+			"fallback_models": [
+				"newapi-claude/claude-sonnet-4-6",
+				"newapi-oai/gpt-5.2"
+			]
+		},
+		"momus": {
+			"model": "newapi-oai/gpt-5.2",
+			"temperature": 0.1,
+			"variant": "medium",
+			"fallback_models": [
+				"newapi-claude/claude-opus-4-6",
+				"newapi-gemini/gemini-3-pro-preview"
+			]
+		},
+		"hephaestus": {
+			"model": "newapi-oai/gpt-5.3-codex",
+			"temperature": 0.1,
+			"fallback_models": [
+				"newapi-oai/gpt-5.2-codex"
+			]
+		},
+		"oracle": {
+			"model": "newapi-oai/gpt-5.2",
+			"temperature": 0.1,
+			"variant": "high",
+			"fallback_models": [
+				"newapi-gemini/gemini-3-pro-preview",
+				"newapi-claude/claude-opus-4-6"
+			]
+		},
+		"librarian": {
+			"model": "zai-coding-plan/glm-4.7",
+			"fallback_models": [
+				"newapi-gemini/gemini-3-flash-preview"
+			]
+		},
+		"explore": {
+			"model": "newapi-claude/claude-haiku-4-5",
+			"fallback_models": [
+				"github-copilot/grok-code-fast-1"
+			]
+		},
+		"multimodal-looker": {
+			"model": "newapi-gemini/gemini-3-pro-preview",
+			"fallback_models": [
+				"newapi-gemini/gemini-3-flash-preview"
+			]
+		}
+	},
+	"categories": {
+		"quick": {
+			"model": "newapi-claude/claude-haiku-4-5",
+			"temperature": 0.1
+		},
+		"deep": {
+			"model": "newapi-oai/gpt-5.3-codex",
+			"variant": "medium",
+			"temperature": 0.1
+		},
+		"ultrabrain": {
+			"model": "newapi-oai/gpt-5.3-codex",
+			"variant": "xhigh",
+			"temperature": 0.1
+		},
+		"visual-engineering": {
+			"model": "newapi-gemini/gemini-3-pro-preview",
+			"temperature": 0.1
+		},
+		"writing": {
+			"model": "newapi-gemini/gemini-3-pro-preview",
+			"temperature": 0.2
+		},
+		"unspecified-low": {
+			"model": "newapi-claude/claude-sonnet-4-6",
+			"temperature": 0.1
+		},
+		"unspecified-high": {
+			"model": "newapi-claude/claude-opus-4-6",
+			"variant": "max",
+			"temperature": 0.1
+		}
+	}
 }
