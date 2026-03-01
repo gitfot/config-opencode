@@ -1,0 +1,163 @@
+{
+	"plugin": [
+		"oh-my-opencode"
+	],
+	"model": "newapi-claude/claude-opus-4-6",
+	"$schema": "https://opencode.ai/config.json",
+	"theme": "mercury",
+	"autoupdate": "notify",
+	"provider": {
+		"newapi-oai": {
+			"npm": "@ai-sdk/openai",
+			"name": "newapi-oai",
+			"options": {
+				"baseURL": "https://api.204502.xyz/v1",
+				"setCacheKey": true
+			},
+			"models": {
+				"gpt-5.2": {
+					"name": "gpt-5.2",
+					"thinking": true,
+					"options": {
+						"include": [
+							"reasoning.encrypted_content"
+						],
+						"store": false
+					},
+					"variants": {
+						"xhigh": {
+							"reasoningEffort": "xhigh",
+							"textVerbosity": "medium",
+							"reasoningSummary": "auto"
+						},
+						"high": {
+							"reasoningEffort": "high",
+							"textVerbosity": "medium",
+							"reasoningSummary": "auto"
+						},
+						"medium": {
+							"reasoningEffort": "medium",
+							"textVerbosity": "medium",
+							"reasoningSummary": "auto"
+						},
+						"low": {
+							"reasoningEffort": "low",
+							"textVerbosity": "medium",
+							"reasoningSummary": "auto"
+						}
+					}
+				},
+				"gpt-5.3-codex": {
+					"name": "gpt-5.3-codex",
+					"thinking": true,
+					"options": {
+						"include": [
+							"reasoning.encrypted_content"
+						],
+						"store": false
+					},
+					"variants": {
+						"xhigh": {
+							"reasoningEffort": "xhigh",
+							"textVerbosity": "medium",
+							"reasoningSummary": "auto"
+						},
+						"high": {
+							"reasoningEffort": "high",
+							"textVerbosity": "medium",
+							"reasoningSummary": "auto"
+						},
+						"medium": {
+							"reasoningEffort": "medium",
+							"textVerbosity": "medium",
+							"reasoningSummary": "auto"
+						},
+						"low": {
+							"reasoningEffort": "low",
+							"textVerbosity": "medium",
+							"reasoningSummary": "auto"
+						}
+					}
+				}
+			}
+		},
+		"newapi-claude": {
+			"npm": "@ai-sdk/anthropic",
+			"name": "newapi-claude",
+			"options": {
+				"baseURL": "https://api.204502.xyz/v1"
+			},
+			"models": {
+				"claude-opus-4-6": {
+					"name": "claude-opus-4-6",
+					"thinking": true
+				},
+				"claude-sonnet-4-6": {
+					"name": "claude-sonnet-4-6",
+					"thinking": true
+				},
+				"claude-haiku-4-5": {
+					"name": "claude-haiku-4-5",
+					"thinking": true
+				}
+			}
+		},
+		"newapi-gemini": {
+			"npm": "@ai-sdk/google",
+			"name": "newapi-gemini",
+			"options": {
+				"baseURL": "https://api.204502.xyz/v1beta"
+			},
+			"models": {
+				"gemini-3-pro-preview": {
+					"name": "gemini-3-pro-preview",
+					"thinking": true
+				},
+				"gemini-3.1-pro-preview": {
+					"name": "gemini-3.1-pro-preview",
+					"thinking": true
+				},
+				"gemini-3-flash-preview": {
+					"name": "gemini-3-flash-preview",
+					"thinking": true
+				},
+			}
+		}
+	},
+	"permission": {
+		"bash": {
+			"*": "ask",
+			"ls *": "allow",
+			"cat *": "allow",
+			"head *": "allow",
+			"tail *": "allow",
+			"find *": "allow",
+			"grep *": "allow",
+			"pwd": "allow",
+			"echo *": "allow",
+			"which *": "allow",
+			"type *": "allow",
+			"file *": "allow",
+			"stat *": "allow",
+			"wc *": "allow",
+			"diff *": "allow",
+			"git status*": "allow",
+			"git log*": "allow",
+			"git diff*": "allow",
+			"git show*": "allow",
+			"git branch*": "allow"
+		}
+	},
+	"compaction": {
+		"auto": true,
+		"prune": true
+	},
+	"watcher": {
+		"ignore": [
+			"node_modules/**",
+			"dist/**",
+			".git/**",
+			"*.log"
+		]
+	}
+}

@@ -1,0 +1,94 @@
+{
+  "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-opencode/master/assets/oh-my-opencode.schema.json",
+  "google_auth": true,
+  "agents": {
+    "sisyphus": {
+      "model": "newapi-claude/claude-opus-4-6"
+    },
+    "OpenCode-Builder": {
+      "model": "newapi-claude/claude-opus-4-6"
+    },
+    "prometheus": {
+      "model": "newapi-claude/claude-opus-4-6"
+    },
+	"hephaestus": {
+      "model": "newapi-oai/gpt-5.3-codex",
+	  "variant": "xhigh"
+    },
+    "metis": {
+      "model": "newapi-claude/claude-sonnet-4-5"
+    },
+    "momus": {
+      "model": "newapi-oai/gpt-5.3-codex",
+	  "variant": "xhigh"
+    },
+    "atlas": {
+      "model": "newapi-claude/claude-sonnet-4-5"
+    },
+    "oracle": {
+      "model": "newapi-oai/gpt-5.3-codex",
+	  "reasoningEffort":"xhigh",
+      "description": "Architecture, code review, strategy"
+    },
+    "librarian": {
+      "model": "newapi-gemini/gemini-3-flash-preview",
+      "description": "Multi-repo analysis, doc lookup, implementation examples"
+    },
+    "explore": {
+      "model": "newapi-claude/claude-haiku-4-5",
+      "description": "Fast codebase exploration and pattern matching"
+    },
+    "frontend-ui-ux-engineer": {
+      "model": "newapi-gemini/gemini-3-pro-preview",
+      "description": "A designer turned developer. Builds gorgeous UIs"
+    },
+    "document-writer": {
+      "model": "newapi-gemini/gemini-3-flash-preview",
+      "description": "Technical writing expert"
+    },
+    "multimodal-looker": {
+      "model": "newapi-gemini/gemini-3-flash-preview",
+      "description": "Visual content specialist"
+    }
+  },
+  "categories": {
+    "visual-engineering": { 
+      "model": "newapi-gemini/gemini-3-pro-preview"
+    },
+    "ultrabrain": { 
+      "model": "newapi-oai/gpt-5.3-codex",
+      "variant": "xhigh"
+    },
+    "artistry": { 
+      "model": "newapi-gemini/gemini-3-pro-preview",
+      "variant": "max"
+    },
+    "quick": { 
+      "model": "newapi-claude/claude-haiku-4-5"
+    },
+    "unspecified-low": { 
+      "model": "newapi-claude/claude-sonnet-4-5"
+    },
+    "unspecified-high": { 
+      "model": "newapi-claude/claude-opus-4-6",
+      "variant": "max"
+    },
+    "writing": { 
+      "model": "newapi-gemini/gemini-3-flash-preview"
+    }
+  },
+  "sisyphus_agent": {
+    "disabled": false,
+    "default_builder_enabled": false,
+    "planner_enabled": true,
+    "replace_plan": true
+  },
+  "background_task": {
+    "defaultConcurrency": 5,
+    "providerConcurrency": {
+      "anthropic": 3,
+      "openai": 5,
+      "google": 10
+    }
+  },
+}
