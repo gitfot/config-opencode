@@ -1,4 +1,5 @@
-Always respond in Chinese-simplified
+Always respond in Chinese-simplified;
+When troubleshooting issues, if the existing information cannot determine a single cause, you can ask me for more information (e.g., request parameters, full call chain, configuration information, reproduction steps, etc.);
 
 ## WSL Environment Detection & Build Commands
 
@@ -38,12 +39,24 @@ powershell.exe -Command "\$env:JAVA_HOME='D:\wanwan\project\common\java_tools\{J
 powershell.exe -Command "\$env:JAVA_HOME='D:\wanwan\project\common\java_tools\{JDK_DIR}'; \$env:PATH=\"\$env:JAVA_HOME\bin;\$env:PATH\"; cd '{WIN_PROJECT_DIR}'; D:\wanwan\project\common\java_tools\apache-maven-3.9.0\bin\mvn.cmd test -Dtest={TEST_CLASS}"
 ```
 
+### WSL API Testing (curl)
+
+Java 服务由开发人员在 Windows 宿主机 IDEA 中手动运行，WSL 无法通过 `127.0.0.1` 访问。
+需要接口测试（curl 等）时，先获取宿主机 IP 再替换：
+
+```bash
+HOST_IP=$(ip route show | grep -i default | awk '{print $3}')
+curl http://${HOST_IP}:9010/api/xxx
+```
+
 ### WSL Python (via PowerShell)
 
 **工具链位置**（Windows 路径）：
 - Python 目录: `C:\Users\for97\AppData\Local\Programs\Python`
-  - 可用版本: `Python312`
+  - 可用版本: `Python39`, `Python312`
   - 可执行文件: 各版本目录下的 `python.exe`
+  
+优先使用Python312版本
 
 **命令模板**（`{WIN_PROJECT_DIR}` 为项目路径的 Windows 格式, `{PYTHON_DIR}` 为对应版本目录名，如 `Python312`）:
 
