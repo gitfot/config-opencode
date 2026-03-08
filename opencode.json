@@ -3,6 +3,9 @@
 		"oh-my-opencode@latest",
 		"@tarquinen/opencode-dcp@latest"
 	],
+	"skills": {
+        "paths": ["/home/wanwan/.agents/skills"]
+     },
 	"model": "newapi-oai/gpt-5.4",
 	"$schema": "https://opencode.ai/config.json",
 	"autoupdate": "notify",
