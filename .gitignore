@@ -3,3 +3,4 @@ package.json
 bun.lock
 tui.json
 *.Identifier
+package-lock.json
