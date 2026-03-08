@@ -16,72 +16,72 @@
 	},
 	"agents": {
 		"sisyphus": {
-			"model": "newapi-claude/claude-opus-4-6",
+			"model": "newapi-oai/gpt-5.4",
 			"temperature": 0.1,
+			"variant": "high",
 			"fallback_models": [
-				"newapi-claude/claude-sonnet-4-6",
 				"newapi-oai/gpt-5.3-codex",
+				"newapi-oai/gpt-5.2-codex",
 			]
 		},
 		"atlas": {
-			"model": "newapi-claude/claude-sonnet-4-6",
+			"model": "newapi-oai/gpt-5.4",
 			"temperature": 0.1,
 			"fallback_models": [
-				"newapi-claude/claude-opus-4-6",
-				"newapi-gemini/gemini-3-pro-preview"
+				"newapi-oai/gpt-5.3-codex"
 			]
 		},
 		"prometheus": {
-			"model": "newapi-claude/claude-opus-4-6",
+			"model": "newapi-oai/gpt-5.4",
 			"temperature": 0.1,
 			"fallback_models": [
-				"newapi-oai/gpt-5.2"
+				"newapi-oai/gpt-5.3-codex"
 			]
 		},
 		"metis": {
-			"model": "newapi-claude/claude-opus-4-6",
+			"model": "newapi-oai/gpt-5.4",
 			"temperature": 0.3,
 			"variant": "max",
 			"fallback_models": [
-				"newapi-claude/claude-sonnet-4-6",
-				"newapi-oai/gpt-5.2"
+				"newapi-oai/gpt-5.3-codex"
 			]
 		},
 		"momus": {
-			"model": "newapi-oai/gpt-5.2",
+			"model": "newapi-oai/gpt-5.4",
 			"temperature": 0.1,
 			"variant": "medium",
 			"fallback_models": [
-				"newapi-claude/claude-opus-4-6",
+				"newapi-oai/gpt-5.2",
 				"newapi-gemini/gemini-3-pro-preview"
 			]
 		},
 		"hephaestus": {
-			"model": "newapi-oai/gpt-5.3-codex",
+			"model": "newapi-oai/gpt-5.4",
 			"temperature": 0.1,
+			"variant": "xhigh",
 			"fallback_models": [
-				"newapi-oai/gpt-5.2-codex"
+				"newapi-oai/gpt-5.3-codex"
 			]
 		},
 		"oracle": {
-			"model": "newapi-oai/gpt-5.2",
+			"model": "newapi-oai/gpt-5.4",
 			"temperature": 0.1,
-			"variant": "high",
+			"variant": "xhigh",
 			"fallback_models": [
 				"newapi-gemini/gemini-3-pro-preview",
-				"newapi-claude/claude-opus-4-6"
+				"newapi-oai/gpt-5.2"
 			]
 		},
 		"librarian": {
-			"model": "zai-coding-plan/glm-4.7",
+			"model": "newapi-oai/gpt-5.3-codex-spark",
 			"fallback_models": [
 				"newapi-gemini/gemini-3-flash-preview"
 			]
 		},
 		"explore": {
-			"model": "newapi-claude/claude-haiku-4-5",
+			"model": "newapi-oai/gpt-5.3-codex-spark",
 			"fallback_models": [
-				"github-copilot/grok-code-fast-1"
+				"newapi-gemini/gemini-3-flash-preview"
 			]
 		},
 		"multimodal-looker": {
@@ -93,16 +93,16 @@
 	},
 	"categories": {
 		"quick": {
-			"model": "newapi-claude/claude-haiku-4-5",
+			"model": "newapi-oai/gpt-5.3-codex-spark",
 			"temperature": 0.1
 		},
 		"deep": {
-			"model": "newapi-oai/gpt-5.3-codex",
+			"model": "newapi-oai/gpt-5.4",
 			"variant": "medium",
 			"temperature": 0.1
 		},
 		"ultrabrain": {
-			"model": "newapi-oai/gpt-5.3-codex",
+			"model": "newapi-oai/gpt-5.4",
 			"variant": "xhigh",
 			"temperature": 0.1
 		},
@@ -115,11 +115,11 @@
 			"temperature": 0.2
 		},
 		"unspecified-low": {
-			"model": "newapi-claude/claude-sonnet-4-6",
+			"model": "newapi-oai/gpt-5.4",
 			"temperature": 0.1
 		},
 		"unspecified-high": {
-			"model": "newapi-claude/claude-opus-4-6",
+			"model": "newapi-oai/gpt-5.4",
 			"variant": "max",
 			"temperature": 0.1
 		}
