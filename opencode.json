@@ -1,20 +1,19 @@
 {
 	"plugin": [
-		"oh-my-opencode@latest",
 		"@tarquinen/opencode-dcp@latest"
 	],
 	"skills": {
         "paths": ["/home/wanwan/.agents/skills"]
      },
-	"model": "newapi-oai/gpt-5.4",
+	"model": "sub2api-oai/gpt-5.4",
 	"$schema": "https://opencode.ai/config.json",
 	"autoupdate": "notify",
 	"provider": {
-		"newapi-oai": {
+		"sub2api-oai": {
 			"npm": "@ai-sdk/openai",
-			"name": "newapi-oai",
+			"name": "sub2api-oai",
 			"options": {
-				"baseURL": "https://api.204502.xyz/v1",
+				"baseURL": "https://token.204502.xyz/v1",
 				"setCacheKey": true
 			},
 			"models": {
@@ -138,11 +137,11 @@
 				}
 			}
 		},
-		"newapi-claude": {
+		"sub2api-claude": {
 			"npm": "@ai-sdk/anthropic",
-			"name": "newapi-claude",
+			"name": "sub2api-claude",
 			"options": {
-				"baseURL": "https://api.204502.xyz/v1"
+				"baseURL": "https://token.204502.xyz/v1"
 			},
 			"models": {
 				"claude-opus-4-6": {
@@ -187,11 +186,11 @@
 				}
 			}
 		},
-		"newapi-gemini": {
+		"sub2api-gemini": {
 			"npm": "@ai-sdk/google",
-			"name": "newapi-gemini",
+			"name": "sub2api-gemini",
 			"options": {
-				"baseURL": "https://api.204502.xyz/v1beta"
+				"baseURL": "https://token.204502.xyz/v1beta"
 			},
 			"models": {
 				"gemini-3-pro-preview": {
